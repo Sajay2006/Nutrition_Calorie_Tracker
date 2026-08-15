@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.overlay{
+    width:100%;
+    min-height:100vh;
+    background:rgba(0,0,0,.60);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:430px;
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.20);
+    border-radius:20px;
+    padding:40px 35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.40);
+    text-align:center;
+    color:#fff;
+}
+
+.logo{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.login-box h1{
+    color:#7CFC00;
+    margin-bottom:10px;
+    font-size:34px;
+}
+
+.subtitle{
+    color:#f2f2f2;
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.input-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#32CD32;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px 15px 14px 45px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.options a{
+    color:#7CFC00;
+    text-decoration:none;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+.btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#32CD32;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#2E8B57;
+    transform:translateY(-3px);
+}
+
+.register-link{
+    margin-top:25px;
+    font-size:15px;
+}
+
+.register-link a{
+    color:#7CFC00;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.register-link a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:768px){
+
+.login-box{
+    padding:30px 20px;
+}
+
+.login-box h1{
+    font-size:28px;
+}
+
+.subtitle{
+    font-size:14px;
+}
+
+.btn{
+    font-size:16px;
+}
+
+}

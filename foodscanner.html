@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Scanner | NutriTrack</title>
+
+    <link rel="stylesheet" href="foodscanner.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                🥗 NutriTrack
+            </div>
+
+            <p class="menu-title">MAIN MENU</p>
+              
+                <a href="dash.html" class="menu-item">
+                    🏠
+                    <span class="nav-text">Dashboard</span>
+                </a>
+
+
+            <a href="foodscanner.html" class="menu-item active">
+                🥗
+                <span>Food Scanner</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                📋
+                <span>Food History</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                ⚖️
+                <span>BMI Calculator</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                💧
+                <span>Water Intake</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                🏃
+                <span>Exercise Tracker</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                📊
+                <span>Nutrition Reports</span>
+            </a>
+
+
+            <p class="menu-title account">ACCOUNT</p>
+
+            <a href="#" class="menu-item">
+                👤
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                ⚙️
+                <span>Settings</span>
+            </a>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <p class="small-title">FOOD SCANNER</p>
+
+            <h1>Scan Your Food 🥗</h1>
+
+            <p class="subtitle">
+                Upload an image of your food to get nutrition information.
+            </p>
+
+
+            <!-- Scanner Card -->
+            <div class="scanner-card">
+
+                <div class="camera-icon">
+                    📷
+                </div>
+
+                <h2>Food Scanner</h2>
+
+                <p>
+                    Take a photo or upload an image of your food.
+                </p>
+
+
+                <!-- Upload Area -->
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        ⬆️
+                    </div>
+
+                    <h3>Upload Food Image</h3>
+
+                    <p>JPG, JPEG or PNG</p>
+
+                    <input
+                        type="file"
+                        id="foodImage"
+                        accept="image/jpeg,image/png,image/jpg"
+                    >
+
+                </div>
+
+
+                <!-- Image Preview -->
+                <div class="preview-container">
+
+                    <img id="preview" alt="Food Preview">
+
+                </div>
+
+
+                <button id="scanButton">
+                    🔍 Scan Food
+                </button>
+
+            </div>
+
+
+            <!-- Result -->
+            <div class="result-card">
+
+                <h2>Nutrition Information</h2>
+
+                <div class="food-name">
+                    <span id="foodName">No food scanned</span>
+                </div>
+
+
+                <div class="nutrition">
+
+                    <div class="nutrition-box">
+                        <h3 id="calories">--</h3>
+                        <p>Calories</p>
+                    </div>
+
+                    <div class="nutrition-box">
+                        <h3 id="protein">--</h3>
+                        <p>Protein</p>
+                    </div>
+
+                    <div class="nutrition-box">
+                        <h3 id="carbs">--</h3>
+                        <p>Carbohydrates</p>
+                    </div>
+
+                    <div class="nutrition-box">
+                        <h3 id="fat">--</h3>
+                        <p>Fat</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="foodscanner.js"></script>
+
+</body>
+</html>

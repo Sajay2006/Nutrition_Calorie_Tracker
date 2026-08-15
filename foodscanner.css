@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #315d47;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 270px;
+    min-height: 100vh;
+    background: #063b2a;
+    padding: 30px 20px;
+    color: white;
+}
+
+.logo {
+    font-size:30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.menu-title {
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin: 20px 15px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 18px;
+    margin: 7px 0;
+
+    border-radius: 15px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    background: #39795d;
+}
+
+.menu-item.active {
+    background: #68d39a;
+    color: #063b2a;
+}
+
+.account {
+    margin-top: 40px;
+}
+
+
+/* MAIN CONTENT */
+
+.content {
+    flex: 1;
+
+    padding: 50px;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(39, 88, 65, 0.85),
+            rgba(39, 88, 65, 0.85)
+        );
+}
+
+.small-title {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.subtitle {
+    color: #e0e8e2;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* SCANNER CARD */
+
+.scanner-card {
+    max-width: 850px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    margin: auto;
+}
+
+.camera-icon {
+    font-size: 55px;
+}
+
+.scanner-card h2 {
+    color: #174b35;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.scanner-card > p {
+    color: #777;
+    margin-top: 10px;
+}
+
+
+/* UPLOAD */
+
+.upload-area {
+    margin-top: 30px;
+
+    border: 2px dashed #68c994;
+
+    background: #f3faf6;
+
+    border-radius: 20px;
+
+    padding: 35px;
+}
+
+.upload-icon {
+    font-size: 35px;
+}
+
+.upload-area h3 {
+    color: #174b35;
+    margin-top: 12px;
+}
+
+.upload-area p {
+    color: #888;
+    margin: 8px 0 20px;
+}
+
+input[type="file"] {
+    display: block;
+    margin: auto;
+}
+
+
+/* PREVIEW */
+
+.preview-container {
+    margin-top: 25px;
+}
+
+#preview {
+    display: none;
+
+    width: 250px;
+    max-height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    margin: auto;
+}
+
+
+/* BUTTON */
+
+#scanButton {
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #174b35;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#scanButton:hover {
+    background: #246347;
+}
+
+
+/* RESULT */
+
+.result-card {
+    max-width: 850px;
+
+    background: white;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    border-radius: 25px;
+}
+
+.result-card h2 {
+    color: #174b35;
+    margin-bottom: 20px;
+}
+
+.food-name {
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.nutrition {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.nutrition-box {
+    background: #edf8f1;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.nutrition-box h3 {
+    color: #174b35;
+    font-size: 22px;
+}
+
+.nutrition-box p {
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .content {
+        padding: 25px;
+    }
+
+    .nutrition {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

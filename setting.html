@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | NutriTrack</title>
+
+    <link rel="stylesheet" href="setting.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Main Settings Area -->
+    <main class="settings-page">
+
+        <!-- Header -->
+        <div class="settings-header">
+
+            <div>
+                <span class="small-title">NUTRITRACK</span>
+
+                <h1>
+                    <i class="fa-solid fa-sliders"></i>
+                    Settings
+                </h1>
+
+                <p>
+                    Personalize your experience and manage your preferences.
+                </p>
+            </div>
+
+            <div class="profile-mini">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>User</strong>
+                    <small>Manage your account</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Settings Container -->
+        <div class="settings-container">
+
+
+            <!-- Password & Security -->
+            <section class="setting-card">
+
+                <div class="section-title">
+
+                    <div class="section-icon security">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <div>
+                        <h2>Password & Security</h2>
+                        <p>Keep your account secure</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-box">
+
+                        <label>Current Password</label>
+
+                        <div class="password-field">
+                            <input type="password"
+                                   id="currentPassword"
+                                   placeholder="Enter current password">
+
+                            <i class="fa-regular fa-eye"
+                               onclick="togglePassword('currentPassword', this)">
+                            </i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>New Password</label>
+
+                        <div class="password-field">
+                            <input type="password"
+                                   id="newPassword"
+                                   placeholder="Enter new password">
+
+                            <i class="fa-regular fa-eye"
+                               onclick="togglePassword('newPassword', this)">
+                            </i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>Confirm New Password</label>
+
+                        <div class="password-field">
+                            <input type="password"
+                                   id="confirmPassword"
+                                   placeholder="Confirm new password">
+
+                            <i class="fa-regular fa-eye"
+                               onclick="togglePassword('confirmPassword', this)">
+                            </i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="password-strength">
+
+                    <span>Password strength</span>
+
+                    <div class="strength-line">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <small>Use 8+ characters with letters and numbers.</small>
+
+                </div>
+
+
+                <button class="primary-btn"
+                        onclick="changePassword()">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Update Password
+
+                </button>
+
+            </section>
+
+
+
+            <!-- Appearance -->
+            <section class="setting-card">
+
+                <div class="section-title">
+
+                    <div class="section-icon appearance">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <div>
+                        <h2>Appearance</h2>
+                        <p>Choose how NutriTrack looks</p>
+                    </div>
+
+                </div>
+
+
+                <div class="theme-options">
+
+                    <button class="theme-option active"
+                            onclick="setTheme('light', this)">
+
+                        <div class="theme-preview light-preview">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+
+                        <div>
+                            <strong>Light Mode</strong>
+                            <small>Bright & clean</small>
+                        </div>
+
+                        <i class="fa-solid fa-circle-check check"></i>
+
+                    </button>
+
+
+                    <button class="theme-option"
+                            onclick="setTheme('dark', this)">
+
+                        <div class="theme-preview dark-preview">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+
+                        <div>
+                            <strong>Dark Mode</strong>
+                            <small>Easy on the eyes</small>
+                        </div>
+
+                        <i class="fa-regular fa-circle check"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Notifications -->
+            <section class="setting-card">
+
+                <div class="section-title">
+
+                    <div class="section-icon notification">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <h2>Notifications</h2>
+                        <p>Choose which reminders you receive</p>
+                    </div>
+
+                </div>
+
+
+                <div class="notification-list">
+
+
+                    <div class="notification-row">
+
+                        <div class="notification-info">
+
+                            <div class="notification-symbol water">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+
+                            <div>
+                                <strong>Water Reminder</strong>
+                                <small>Remind me to drink water</small>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="notification-row">
+
+                        <div class="notification-info">
+
+                            <div class="notification-symbol exercise">
+                                <i class="fa-solid fa-person-running"></i>
+                            </div>
+
+                            <div>
+                                <strong>Exercise Reminder</strong>
+                                <small>Remind me to stay active</small>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="notification-row">
+
+                        <div class="notification-info">
+
+                            <div class="notification-symbol meal">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+
+                            <div>
+                                <strong>Meal Reminder</strong>
+                                <small>Breakfast, lunch & dinner reminders</small>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="notification-row">
+
+                        <div class="notification-info">
+
+                            <div class="notification-symbol report">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </div>
+
+                            <div>
+                                <strong>Weekly Report</strong>
+                                <small>Receive your weekly progress report</small>
+                            </div>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification Channel -->
+
+                <div class="channels">
+
+                    <h3>Notification Channels</h3>
+
+                    <div class="channel-grid">
+
+                        <div class="channel-card">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+                                <strong>Email</strong>
+                                <small>your registered email</small>
+                            </div>
+
+                            <i class="fa-solid fa-check verified"></i>
+
+                        </div>
+
+
+                        <div class="channel-card">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                            <div>
+                                <strong>SMS</strong>
+                                <small>your registered mobile</small>
+                            </div>
+
+                            <i class="fa-solid fa-check verified"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Schedule -->
+
+                <div class="schedule">
+
+                    <div>
+                        <strong>Reminder Schedule</strong>
+                        <small>Customize your reminder timing</small>
+                    </div>
+
+                    <button onclick="openSchedule()">
+                        <i class="fa-regular fa-clock"></i>
+                        Customize
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Language -->
+            <section class="setting-card">
+
+                <div class="section-title">
+
+                    <div class="section-icon language">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+
+                    <div>
+                        <h2>Language</h2>
+                        <p>Select your preferred language</p>
+                    </div>
+
+                </div>
+
+
+                <div class="language-select">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <select id="language">
+
+                        <option>English</option>
+                        <option>Tamil</option>
+                        <option>Hindi</option>
+                        <option>Telugu</option>
+                        <option>Malayalam</option>
+                        <option>Kannada</option>
+                        <option>Bengali</option>
+                        <option>Marathi</option>
+                        <option>Gujarati</option>
+                        <option>Punjabi</option>
+
+                    </select>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Privacy -->
+            <section class="setting-card">
+
+                <div class="section-title">
+
+                    <div class="section-icon privacy">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+
+                    <div>
+                        <h2>Privacy & Security</h2>
+                        <p>Manage your account privacy</p>
+                    </div>
+
+                </div>
+
+
+                <div class="privacy-options">
+
+                    <button>
+                        <span>
+                            <i class="fa-solid fa-user-shield"></i>
+                            Data Privacy
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+
+                    <button>
+                        <span>
+                            <i class="fa-solid fa-user-lock"></i>
+                            Account Security
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+
+                    <button class="danger">
+                        <span>
+                            <i class="fa-solid fa-trash"></i>
+                            Delete Account
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- App Preferences -->
+            <section class="setting-card">
+
+                <div class="section-title">
+
+                    <div class="section-icon preferences">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+
+                    <div>
+                        <h2>App Preferences</h2>
+                        <p>Customize your app experience</p>
+                    </div>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <span>
+                        <i class="fa-solid fa-weight-scale"></i>
+                        Measurement Unit
+                    </span>
+
+                    <select>
+                        <option>kg / cm / L</option>
+                        <option>lb / ft / oz</option>
+                    </select>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Date Format
+                    </span>
+
+                    <select>
+                        <option>DD / MM / YYYY</option>
+                        <option>MM / DD / YYYY</option>
+                    </select>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <span>
+                        <i class="fa-solid fa-volume-high"></i>
+                        Notification Sound
+                    </span>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Edit Profile -->
+            <section class="setting-card edit-profile">
+
+                <div class="section-title">
+
+                    <div class="section-icon profile">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </div>
+
+                    <div>
+                        <h2>Edit Profile</h2>
+                        <p>Update your personal information</p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-fields">
+
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text"
+                               placeholder="Enter your name">
+                    </div>
+
+                    <div>
+                        <label>Email</label>
+                        <input type="email"
+                               placeholder="Enter your email">
+                    </div>
+
+                    <div>
+                        <label>Mobile Number</label>
+                        <input type="tel"
+                               placeholder="Enter mobile number">
+                    </div>
+
+                </div>
+
+
+                <button class="primary-btn">
+                    <i class="fa-solid fa-check"></i>
+                    Save Profile
+                </button>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+<script>
+
+function togglePassword(id, icon) {
+
+    const input = document.getElementById(id);
+
+    if (input.type === "password") {
+
+        input.type = "text";
+
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+
+    } else {
+
+        input.type = "password";
+
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+
+    }
+}
+
+
+function changePassword() {
+
+    const newPassword =
+        document.getElementById("newPassword").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    if (!newPassword || !confirmPassword) {
+
+        alert("Please enter your new password.");
+
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+
+        alert("Passwords do not match.");
+
+        return;
+    }
+
+    alert("Password updated successfully!");
+
+}
+
+
+function setTheme(theme, element) {
+
+    document.querySelectorAll(".theme-option")
+        .forEach(option =>
+            option.classList.remove("active")
+        );
+
+    element.classList.add("active");
+
+    if (theme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+    }
+
+}
+
+
+function openSchedule() {
+
+    alert("Reminder schedule settings will open here.");
+
+}
+
+</script>
+
+</body>
+</html>

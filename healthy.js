@@ -1,7 +1,7 @@
 const foods = {
 
 apple:{
-image:"image/apple.jpg",
+image:"image/Apple.jpg",
 category:"Fruit",
 calories:"52 kcal",
 protein:"0.3 g",
@@ -378,9 +378,9 @@ status:"Healthy ✅"
 
 function searchFood(){
 
-let name=document.getElementById("food").value.toLowerCase().trim();
+let name=document.getElementById("food-search").value.toLowerCase().trim();
 
-let result=document.getElementById("result");
+let result=document.getElementById("search-results");
 
 if(foods[name]){
 
@@ -389,8 +389,9 @@ let f=foods[name];
 result.innerHTML=`
 
 <div class="food-card">
-
-<img src="${f.image}" alt="${name}">
+<br>
+<img src="${f.image}" alt="${name}" style="width:160 px;height:160px;object-fit:cover;border-radius:10px;
+display:block;margin:0 auto;">
 
 <h2>${name.toUpperCase()}</h2>
 
@@ -404,7 +405,7 @@ result.innerHTML=`
 
 <p>🥑 <b>Fat:</b> ${f.fat}</p>
 
-<p>🌾 <b>Fiber:</b> ${f.fiber}</p>
+<p>🌾 <b>Fiber:</b> ${f.fiber}</p> 
 
 <p>💊 <b>Vitamins:</b> ${f.vitamins}</p>
 

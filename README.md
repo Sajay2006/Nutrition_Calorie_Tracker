@@ -1,2 +1,0 @@
-# nutrition-tracker
-healthy life

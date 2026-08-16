@@ -1,443 +1,491 @@
-const foods = {
+// ===============================
+// NUTRITRACK DASHBOARD JAVASCRIPT
+// ===============================
 
-apple:{
-image:"image/apple.jpg",
-category:"Fruit",
-calories:"52 kcal",
-protein:"0.3 g",
-carbs:"14 g",
-fat:"0.2 g",
-fiber:"2.4 g",
-vitamins:"Vitamin C",
-benefits:"❤️ Improves heart health<br>🛡️ Boosts immunity<br>🌿 Improves digestion<br>⚖️ Helps in weight management",
-status:"Healthy ✅"
-},
-guava:{
-image:"image/guava.jpg",
-category:"Fruit",
-calories:"68 kcal",
-protein:"2.6 g",
-carbs:"14 g",
-fat:"1.0 g",
-fiber:"5.4 g",
-vitamins:"Vitamin C",
-benefits:"🛡️ Boosts immunity<br>❤️ Good for heart<br>🌿 Improves digestion",
-status:"Healthy ✅"
-},
+const foodData = {
+    apple: {
+        name: "Apple",
+        calories: "95 kcal",
+        protein: "0.5 g",
+        carbs: "25 g",
+        fat: "0.3 g",
+        fiber: "4.4 g",
+        image: "image/apple.jpg"
+    },
+/* ================= HEALTHY DRINKS ================= */
 
-papaya:{
-image:"image/papaya.webp",
-category:"Fruit",
-calories:"43 kcal",
-protein:"0.5 g",
-carbs:"11 g",
-fat:"0.3 g",
-fiber:"1.7 g",
-vitamins:"Vitamin A, Vitamin C",
-benefits:"👀 Good for eyes<br>🌿 Improves digestion<br>✨ Healthy skin",
-status:"Healthy ✅"
+ilaneer:{
+    image:"image/ilaneer.jpg",
+    category:"Healthy Drink",
+    calories:"19 kcal",
+    protein:"0.7 g",
+    carbs:"3.7 g",
+    fat:"0.2 g",
+    fiber:"1.1 g",
+    vitamins:"Vitamin C, Potassium",
+
+    benefits:
+    "💧 Supports hydration<br>" +
+    "⚡ Contains electrolytes<br>" +
+    "🌿 Refreshing natural drink",
+
+    risk:
+    "⚠️ Best consumed in a reasonable quantity.<br>" +
+    "⚠️ Avoid adding extra sugar.",
+
+    status:"Healthy ✅"
 },
 
-pineapple:{
-image:"image/pineapple.jpg",
-category:"Fruit",
-calories:"50 kcal",
-protein:"0.5 g",
-carbs:"13 g",
-fat:"0.1 g",
-fiber:"1.4 g",
-vitamins:"Vitamin C",
-benefits:"🛡️ Boosts immunity<br>🦴 Strong bones",
-status:"Healthy ✅"
+nungu:{
+    image:"image/nungu.jpg",
+    category:"Traditional Fruit",
+    calories:"87 kcal",
+    protein:"1.4 g",
+    carbs:"18 g",
+    fat:"0.2 g",
+    fiber:"2 g",
+    vitamins:"Potassium, Vitamin B",
+
+    benefits:
+    "💧 Helps hydration<br>" +
+    "🌴 Refreshing traditional food<br>" +
+    "🌿 Provides carbohydrates",
+
+    risk:
+    "⚠️ Large portions can add extra carbohydrates.<br>" +
+    "⚠️ Choose fresh nungu from a clean source.",
+
+    status:"Healthy ✅"
 },
 
-watermelon:{
-image:"image/watermelon.jpg",
-category:"Fruit",
-calories:"30 kcal",
-protein:"0.6 g",
-carbs:"8 g",
-fat:"0.2 g",
-fiber:"0.4 g",
-vitamins:"Vitamin A, Vitamin C",
-benefits:"💧 Keeps body hydrated<br>❤️ Good for heart",
-status:"Healthy ✅"
+padaneer:{
+    image:"image/padaneer.jpg",
+    category:"Traditional Drink",
+    calories:"50 kcal",
+    protein:"0.4 g",
+    carbs:"12 g",
+    fat:"0.1 g",
+    fiber:"0 g",
+    vitamins:"Minerals, Potassium",
+
+    benefits:
+    "🌴 Traditional refreshing drink<br>" +
+    "💧 Provides fluids<br>" +
+    "⚡ Provides natural carbohydrates",
+
+    risk:
+    "⚠️ Contains natural sugars.<br>" +
+    "⚠️ Freshness and hygiene are important.",
+
+    status:"Healthy ✅"
 },
 
-pomegranate:{
-image:"image/pomegranate.jpg",
-category:"Fruit",
-calories:"83 kcal",
-protein:"1.7 g",
-carbs:"19 g",
-fat:"1.2 g",
-fiber:"4 g",
-vitamins:"Vitamin C, Vitamin K",
-benefits:"🩸 Increases blood health<br>❤️ Good for heart",
-status:"Healthy ✅"
+mor:{
+    image:"image/mor.jpg",
+    category:"Healthy Drink",
+    calories:"40 kcal",
+    protein:"3.3 g",
+    carbs:"4.8 g",
+    fat:"0.9 g",
+    fiber:"0 g",
+    vitamins:"Calcium, Vitamin B12",
+
+    benefits:
+    "🥛 Provides calcium<br>" +
+    "💪 Provides protein<br>" +
+    "💧 Refreshing drink",
+
+    risk:
+    "⚠️ Avoid adding too much salt.<br>" +
+    "⚠️ Use fresh, properly stored buttermilk.",
+
+    status:"Healthy ✅"
 },
 
-avocado:{
-image:"image/Avacado.jpg",
-category:"Fruit",
-calories:"160 kcal",
-protein:"2 g",
-carbs:"9 g",
-fat:"15 g",
-fiber:"7 g",
-vitamins:"Vitamin K, E, C",
-benefits:"🥑 Healthy fats<br>❤️ Heart friendly",
-status:"Healthy ✅"
+elumichainneer:{
+    image:"image/elumineer.jpg",
+    category:"Healthy Drink",
+    calories:"20 kcal",
+    protein:"0.1 g",
+    carbs:"5 g",
+    fat:"0.1 g",
+    fiber:"0.2 g",
+    vitamins:"Vitamin C",
+
+    benefits:
+    "🍋 Provides Vitamin C<br>" +
+    "💧 Refreshing drink<br>" +
+    "🌿 Helps increase fluid intake",
+
+    risk:
+    "⚠️ Avoid adding excess sugar.<br>" +
+    "⚠️ Very acidic drinks may bother some people.",
+
+    status:"Healthy ✅"
 },
 
-coconut:{
-image:"image/coconutcoconut.jpg",
-category:"Fruit",
-calories:"354 kcal",
-protein:"3.3 g",
-carbs:"15 g",
-fat:"33.5 g",
-fiber:"9 g",
-vitamins:"Vitamin B1, B3, C",
-benefits:"⚡ Gives energy<br>🥥 Rich in healthy fats",
-status:"Eat in Moderation ⚠️"
+karumbusaaru:{
+    image:"image/karumbusaaru.jpg",
+    category:"Natural Drink",
+    calories:"74 kcal",
+    protein:"0.2 g",
+    carbs:"18 g",
+    fat:"0.1 g",
+    fiber:"0.6 g",
+    vitamins:"Iron, Potassium",
+
+    benefits:
+    "🌿 Natural source of carbohydrates<br>" +
+    "⚡ Provides energy<br>" +
+    "🥤 Refreshing drink",
+
+    risk:
+    "⚠️ Naturally high in sugar.<br>" +
+    "⚠️ Better in moderate portions.",
+
+    status:"Healthy ✅"
 },
 
-strawberry:{
-image:"image/strawberry.jpg",
-category:"Fruit",
-calories:"32 kcal",
-protein:"0.7 g",
-carbs:"8 g",
-fat:"0.3 g",
-fiber:"2 g",
-vitamins:"Vitamin C",
-benefits:"✨ Healthy skin<br>🛡️ Boosts immunity",
-status:"Healthy ✅"
+ragikoozh:{
+    image:"image/ragikoozh.jpg",
+    category:"Traditional Healthy Drink",
+    calories:"90 kcal",
+    protein:"3 g",
+    carbs:"18 g",
+    fat:"1 g",
+    fiber:"2 g",
+    vitamins:"Calcium, Iron",
+
+    benefits:
+    "🌾 Made from ragi<br>" +
+    "🦴 Provides calcium<br>" +
+    "🌿 Provides fiber",
+
+    risk:
+    "⚠️ Added sugar can increase calories.<br>" +
+    "⚠️ Portion size matters.",
+
+    status:"Healthy ✅"
 },
 
-kiwi:{
-image:"image/kiwi.jpg",
-category:"Fruit",
-calories:"61 kcal",
-protein:"1.1 g",
-carbs:"15 g",
-fat:"0.5 g",
-fiber:"3 g",
-vitamins:"Vitamin C, E",
-benefits:"🛡️ Strong immunity<br>🌿 Better digestion",
-status:"Healthy ✅"
+kambukoozh:{
+    image:"image/kambukoozh.jpg",
+    category:"Traditional Healthy Drink",
+    calories:"95 kcal",
+    protein:"3 g",
+    carbs:"19 g",
+    fat:"1 g",
+    fiber:"2 g",
+    vitamins:"Iron, Magnesium",
+
+    benefits:
+    "🌾 Made from pearl millet<br>" +
+    "🌿 Provides fiber<br>" +
+    "💪 Provides useful nutrients",
+
+    risk:
+    "⚠️ Avoid excessive added salt or sugar.<br>" +
+    "⚠️ Consume a reasonable portion.",
+
+    status:"Healthy ✅"
 },
 
-pear:{
-image:"image/pear.jpg",
-category:"Fruit",
-calories:"57 kcal",
-protein:"0.4 g",
-carbs:"15 g",
-fat:"0.1 g",
-fiber:"3.1 g",
-vitamins:"Vitamin C",
-benefits:"🌿 Rich in fiber<br>❤️ Heart healthy",
-status:"Healthy ✅"
+thinaikoozh:{
+    image:"image/thinaikoozh.jpg",
+    category:"Traditional Healthy Drink",
+    calories:"100 kcal",
+    protein:"3.5 g",
+    carbs:"20 g",
+    fat:"1.5 g",
+    fiber:"2 g",
+    vitamins:"Iron, Magnesium",
+
+    benefits:
+    "🌾 Made from foxtail millet<br>" +
+    "🌿 Provides fiber<br>" +
+    "⚡ Provides energy",
+
+    risk:
+    "⚠️ Large portions add extra calories.<br>" +
+    "⚠️ Avoid excessive sugar.",
+
+    status:"Healthy ✅"
 },
 
-banana:{
-image:"image/banana.jpg",
-category:"Fruit",
-calories:"89 kcal",
-protein:"1.1 g",
-carbs:"23 g",
-fat:"0.3 g",
-fiber:"2.6 g",
-vitamins:"Vitamin B6, Vitamin C",
-benefits:"⚡ Gives instant energy<br>💪 Strengthens muscles<br>🌿 Improves digestion",
-status:"Healthy ✅"
-},
+nannarisarbath:{
+    image:"image/nannarisarbath.jpg",
+    category:"Traditional Drink",
+    calories:"80 kcal",
+    protein:"0 g",
+    carbs:"20 g",
+    fat:"0 g",
+    fiber:"0 g",
+    vitamins:"Minerals",
 
-mango:{
-image:"image/mango.jpg",
-category:"Fruit",
-calories:"60 kcal",
-protein:"0.8 g",
-carbs:"15 g",
-fat:"0.4 g",
-fiber:"1.6 g",
-vitamins:"Vitamin A, Vitamin C",
-benefits:"👀 Good for eyes<br>🛡️ Boosts immunity<br>✨ Good for skin",
-status:"Healthy ✅"
-},
+    benefits:
+    "🌿 Traditional refreshing drink<br>" +
+    "💧 Helps provide fluids<br>" +
+    "🥤 Refreshing option",
 
-orange:{
-image:"image/orange.jpg",
-category:"Fruit",
-calories:"47 kcal",
-protein:"0.9 g",
-carbs:"12 g",
-fat:"0.1 g",
-fiber:"2.4 g",
-vitamins:"Vitamin C",
-benefits:"🍊 Rich in Vitamin C<br>🛡️ Boosts immunity",
-status:"Healthy ✅"
+    risk:
+    "⚠️ Commercial versions may contain high added sugar.<br>" 
 },
-dates:{
-image:"image/dates.webp",
-category:"Fruit",
-calories:"282 kcal",
-protein:"2.5 g",
-carbs:"75 g",
-fat:"0.4 g",
-fiber:"8 g",
-vitamins:"Vitamin B6, Potassium",
-benefits:"🌴 Gives instant energy, improves digestion, and is rich in iron.",
-status:"Healthy ✅"
-},
+    banana: {
+        name: "Banana",
+        calories: "105 kcal",
+        protein: "1.3 g",
+        carbs: "27 g",
+        fat: "0.4 g",
+        fiber: "3.1 g",
+        image: "image/banana.jpg"
+    },
 
-fig:{
-image:"image/fig.jpg",
-category:"Fruit",
-calories:"74 kcal",
-protein:"0.8 g",
-carbs:"19 g",
-fat:"0.3 g",
-fiber:"2.9 g",
-vitamins:"Vitamin K, B6",
-benefits:"🌿 Supports digestion and strengthens bones.",
-status:"Healthy ✅"
-},
+    mango: {
+        name: "Mango",
+        calories: "99 kcal",
+        protein: "1.4 g",
+        carbs: "25 g",
+        fat: "0.6 g",
+        fiber: "2.6 g",
+        image: "image/mango.jpg"
+    },
 
-dragonfruit:{
-image:"image/dragonfruit.jpg",
-category:"Fruit",
-calories:"60 kcal",
-protein:"1.2 g",
-carbs:"13 g",
-fat:"0.1 g",
-fiber:"3 g",
-vitamins:"Vitamin C",
-benefits:"🍈 Boosts immunity and improves gut health.",
-status:"Healthy ✅"
-},
+    rice: {
+        name: "Cooked Rice",
+        calories: "130 kcal",
+        protein: "2.7 g",
+        carbs: "28 g",
+        fat: "0.3 g",
+        fiber: "0.4 g",
+        image: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=800&q=80"
+    },
 
-lychee:{
-image:"image/lychee.jpg",
-category:"Fruit",
-calories:"66 kcal",
-protein:"0.8 g",
-carbs:"17 g",
-fat:"0.4 g",
-fiber:"1.3 g",
-vitamins:"Vitamin C",
-benefits:"🌺 Rich in antioxidants and Vitamin C.",
-status:"Healthy ✅"
-},
+    idli: {
+        name: "Idli",
+        calories: "58 kcal",
+        protein: "2 g",
+        carbs: "12 g",
+        fat: "0.2 g",
+        fiber: "0.5 g",
+        image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+    },
 
-rambutan:{
-image:"image/rambutan.jpg",
-category:"Fruit",
-calories:"68 kcal",
-protein:"0.9 g",
-carbs:"16 g",
-fat:"0.2 g",
-fiber:"2 g",
-vitamins:"Vitamin C",
-benefits:"🌰 Improves skin health and immunity.",
-status:"Healthy ✅"
-},
+    dosa: {
+        name: "Dosa",
+        calories: "168 kcal",
+        protein: "3.9 g",
+        carbs: "29 g",
+        fat: "4.2 g",
+        fiber: "1.5 g",
+        image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80"
+    },
 
-starfruit:{
-image:"image/starfruits.jpg",
-category:"Fruit",
-calories:"31 kcal",
-protein:"1 g",
-carbs:"7 g",
-fat:"0.3 g",
-fiber:"2.8 g",
-vitamins:"Vitamin C",
-benefits:"⭐ Supports digestion and boosts immunity.",
-status:"Healthy ✅"
-},
+    egg: {
+        name: "Boiled Egg",
+        calories: "78 kcal",
+        protein: "6.3 g",
+        carbs: "0.6 g",
+        fat: "5.3 g",
+        fiber: "0 g",
+        image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80"
+    },
 
-jamun:{
-image:"image/jamun.webp",
-category:"Fruit",
-calories:"60 kcal",
-protein:"0.7 g",
-carbs:"15 g",
-fat:"0.2 g",
-fiber:"0.6 g",
-vitamins:"Vitamin C, Iron",
-benefits:"🟣 Helps control blood sugar and improves digestion.",
-status:"Healthy ✅"
-},
+    chicken: {
+        name: "Chicken Breast",
+        calories: "165 kcal",
+        protein: "31 g",
+        carbs: "0 g",
+        fat: "3.6 g",
+        fiber: "0 g",
+        image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80"
+    },
 
-amla:{
-image:"image/amla.jpg",
-category:"Fruit",
-calories:"44 kcal",
-protein:"0.9 g",
-carbs:"10 g",
-fat:"0.6 g",
-fiber:"4.3 g",
-vitamins:"Vitamin C",
-benefits:"🌿 Strengthens immunity and improves hair health.",
-status:"Healthy ✅"
-},
-
-sapota:{
-image:"image/sapota.jpg",
-category:"Fruit",
-calories:"83 kcal",
-protein:"0.4 g",
-carbs:"20 g",
-fat:"1.1 g",
-fiber:"5.3 g",
-vitamins:"Vitamin C",
-benefits:"🍈 Gives energy and supports digestion.",
-status:"Healthy ✅"
-},
-
-mulberry:{
-image:"image/mulberry.jpg",
-category:"Fruit",
-calories:"43 kcal",
-protein:"1.4 g",
-carbs:"10 g",
-fat:"0.4 g",
-fiber:"1.7 g",
-vitamins:"Vitamin C, Iron",
-benefits:"💜 Good for blood circulation and immunity.",
-status:"Healthy ✅"
-},
-
-passionfruit:{
-image:"image/passionfruit.webp",
-category:"Fruit",
-calories:"97 kcal",
-protein:"2.2 g",
-carbs:"23 g",
-fat:"0.7 g",
-fiber:"10 g",
-vitamins:"Vitamin A, Vitamin C",
-benefits:"🌸 Rich in fiber and supports heart health.",
-status:"Healthy ✅"
-},
-
-custardapple:{
-image:"image/custardapple.jpg",
-category:"Fruit",
-calories:"94 kcal",
-protein:"2.1 g",
-carbs:"24 g",
-fat:"0.3 g",
-fiber:"4.4 g",
-vitamins:"Vitamin C",
-benefits:"🍈 Improves immunity and provides energy.",
-status:"Healthy ✅"
-},
-
-pomelo:{
-image:"image/pomelo.jpg",
-category:"Fruit",
-calories:"38 kcal",
-protein:"0.8 g",
-carbs:"9.6 g",
-fat:"0.04 g",
-fiber:"1 g",
-vitamins:"Vitamin C",
-benefits:"🍈 Supports heart health and boosts immunity.",
-status:"Healthy ✅"
-},
-
-mosambi:{
-image:"image/mosambi.jpg",
-category:"Fruit",
-calories:"43 kcal",
-protein:"0.8 g",
-carbs:"9 g",
-fat:"0.3 g",
-fiber:"2.8 g",
-vitamins:"Vitamin C",
-benefits:"🍈 Keeps the body hydrated and improves digestion.",
-status:"Healthy ✅"
-},
-grapes:{
-image:"image/grapes.jpg",
-category:"Fruit",
-calories:"69 kcal",
-protein:"0.7 g",
-carbs:"18 g",
-fat:"0.2 g",
-fiber:"0.9 g",
-vitamins:"Vitamin K, Vitamin C",
-benefits:"❤️ Good for heart<br>🩸 Improves blood circulation",
-status:"Healthy ✅"
-}
-
+    milk: {
+        name: "Milk",
+        calories: "61 kcal",
+        protein: "3.2 g",
+        carbs: "4.8 g",
+        fat: "3.3 g",
+        fiber: "0 g",
+        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80"
+    }
 };
 
-function searchFood(){
 
-let name=document.getElementById("food").value.toLowerCase().trim();
+// ===============================
+// SEARCH FOOD
+// ===============================
 
-let result=document.getElementById("result");
+function searchFood() {
 
-if(foods[name]){
+    const input = document.getElementById("food");
+    const result = document.getElementById("result");
 
-let f=foods[name];
+    if (!input || !result) {
+        console.error("Food search elements not found.");
+        return;
+    }
 
-result.innerHTML=`
+    const searchValue = input.value.trim().toLowerCase();
 
-<div class="food-card">
+    // Empty search
+    if (searchValue === "") {
 
-<img src="${f.image}" alt="${name}">
+        result.innerHTML = `
+            <div class="food-card">
+                <h2>🔍 Search for a food</h2>
+                <p>Please enter a food name such as <b>Apple</b>, 
+                <b>Banana</b>, <b>Idli</b> or <b>Dosa</b>.</p>
+            </div>
+        `;
 
-<h2>${name.toUpperCase()}</h2>
+        return;
+    }
 
-<p>📂 <b>Category:</b> ${f.category}</p>
 
-<p>🔥 <b>Calories:</b> ${f.calories}</p>
+    // Find food
+    const food = findFood(searchValue);
 
-<p>🥩 <b>Protein:</b> ${f.protein}</p>
 
-<p>🍚 <b>Carbohydrates:</b> ${f.carbs}</p>
+    // Food not found
+    if (!food) {
 
-<p>🥑 <b>Fat:</b> ${f.fat}</p>
+        result.innerHTML = `
+            <div class="food-card">
 
-<p>🌾 <b>Fiber:</b> ${f.fiber}</p>
+                <h2>😕 Food Not Found</h2>
 
-<p>💊 <b>Vitamins:</b> ${f.vitamins}</p>
+                <p>
+                    We couldn't find nutrition information for
+                    <b>${escapeHTML(input.value)}</b>.
+                </p>
 
-<p><b>💚 Benefits</b><br>${f.benefits}</p>
+                <p>
+                    Try searching for:
+                    Apple, Banana, Mango, Rice, Idli, Dosa,
+                    Egg, Chicken or Milk.
+                </p>
 
-<p><b>Status:</b> ${f.status}</p>
+            </div>
+        `;
 
-</div>
+        return;
+    }
 
-`;
 
-}else{
+    // Display result
+    result.innerHTML = `
 
-result.innerHTML=`
+        <div class="food-card">
 
-<div class="food-card">
+            <img
+                src="${food.image}"
+                alt="${food.name}"
+            >
 
-<h2 style="color:red;">❌ Food Not Found</h2>
+            <h2>
+                ${food.name}
+            </h2>
 
-<p>Try searching:</p>
+            <p>
+                🔥 <b>Calories:</b> ${food.calories}
+            </p>
 
-<h3>
-🍎 Apple <br>
-🍌 Banana <br>
-🥭 Mango <br>
-🍊 Orange <br>
-🍇 Grapes
-</h3>
+            <p>
+                💪 <b>Protein:</b> ${food.protein}
+            </p>
 
-</div>
+            <p>
+                🍚 <b>Carbohydrates:</b> ${food.carbs}
+            </p>
 
-`;
+            <p>
+                🥑 <b>Fat:</b> ${food.fat}
+            </p>
+
+            <p>
+                🌿 <b>Fiber:</b> ${food.fiber}
+            </p>
+
+            <h3>
+                ✓ Nutrition information displayed successfully
+            </h3>
+
+        </div>
+
+    `;
 
 }
 
+
+// ===============================
+// FIND FOOD
+// ===============================
+
+function findFood(searchValue) {
+
+    // Exact match
+    if (foodData[searchValue]) {
+        return foodData[searchValue];
+    }
+
+
+    // Partial match
+    const foodKey = Object.keys(foodData).find(function(key) {
+
+        return (
+            key.includes(searchValue) ||
+            foodData[key].name.toLowerCase().includes(searchValue)
+        );
+
+    });
+
+
+    if (foodKey) {
+        return foodData[foodKey];
+    }
+
+
+    return null;
 }
+
+
+// ===============================
+// SAFE HTML TEXT
+// ===============================
+
+function escapeHTML(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+// ===============================
+// ENTER KEY SEARCH
+// ===============================
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const foodInput = document.getElementById("food");
+
+    if (!foodInput) {
+        return;
+    }
+
+    foodInput.addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            event.preventDefault();
+
+            searchFood();
+
+        }
+
+    });
+
+});

@@ -29,8 +29,6 @@
             --white: rgba(255,255,255,0.93);
         }
 
-        /* ================= BODY ================= */
-
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
@@ -49,8 +47,6 @@
             background-repeat: no-repeat;
         }
 
-        /* ================= APP ================= */
-
         .app {
             min-height: 100vh;
             display: flex;
@@ -61,7 +57,6 @@
         .sidebar {
             width: 255px;
             min-height: 100vh;
-
             padding: 25px 18px;
 
             background: rgba(7, 34, 24, 0.90);
@@ -81,7 +76,6 @@
             gap: 12px;
 
             color: white;
-
             font-size: 18px;
             font-weight: 700;
 
@@ -112,7 +106,6 @@
             letter-spacing: 1.5px;
 
             padding: 10px 12px;
-
             margin-top: 4px;
         }
 
@@ -284,7 +277,7 @@
         }
 
         .search-box {
-            height: 55px;
+            min-height: 55px;
 
             display: flex;
             align-items: center;
@@ -334,6 +327,92 @@
             font-size: 12px;
 
             cursor: pointer;
+
+            transition: 0.25s;
+
+            white-space: nowrap;
+        }
+
+        .search-button:hover {
+            background: #2f815a;
+            transform: translateY(-1px);
+        }
+
+        /* ================= SEARCH RESULT ================= */
+
+        #result {
+            margin-top: 18px;
+        }
+
+        .food-card {
+            background: rgba(255,255,255,0.97);
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.15);
+
+            animation: resultShow 0.3s ease;
+        }
+
+        .food-card img {
+            display: block;
+
+            width: 100%;
+            max-width: 280px;
+            height: 190px;
+
+            object-fit: cover;
+
+            border-radius: 16px;
+
+            margin: 0 auto 18px;
+        }
+
+        .food-card h2 {
+            color: var(--dark-green);
+
+            font-size: 20px;
+
+            margin-bottom: 14px;
+        }
+
+        .food-card p {
+            color: var(--text);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            margin: 5px 0;
+        }
+
+        .food-card p b {
+            color: var(--dark-green);
+        }
+
+        .food-card h3 {
+            color: var(--green);
+
+            font-size: 13px;
+
+            line-height: 2;
+
+            margin-top: 10px;
+        }
+
+        @keyframes resultShow {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ================= SECTION LABEL ================= */
@@ -831,7 +910,8 @@
             }
 
             .search-box {
-                height: 50px;
+                min-height: 50px;
+                padding: 0 10px;
             }
 
             .search-button {
@@ -844,6 +924,14 @@
 
             .stat-value {
                 font-size: 20px;
+            }
+
+            .food-card {
+                padding: 16px;
+            }
+
+            .food-card img {
+                height: 170px;
             }
         }
 
@@ -974,7 +1062,6 @@
     </aside>
 
 
-
     <!-- ================= MAIN ================= -->
 
     <main class="main">
@@ -1022,7 +1109,6 @@
         </div>
 
 
-
         <!-- ================= FOOD SEARCH ================= -->
 
         <section class="search-area">
@@ -1040,25 +1126,34 @@
             <div class="search-box">
 
                 <span>
-<<<<<<< HEAD
-                  🔍
-=======
-                   🔎
->>>>>>> 54bbed8 (sd)
+                    🔎
                 </span>
+
+
                 <input
                     type="text"
-                    id="food-search"
-                    placeholder="Search food... e.g. Healthy Salad, Oats, Apple"
+                    id="food"
+                    placeholder="Search food... e.g. Apple, Banana, Mango"
+                    autocomplete="off"
                 >
-                <button class="search-button" onclick="searchFood()">
-                    <span class="button-text">search</span>
+
+
+                <button
+                    type="button"
+                    class="search-button"
+                    onclick="searchFood()"
+                >
+                    Search
                 </button>
 
             </div>
-<div id="search-results"></div>
-        </section>
 
+
+            <!-- SEARCH RESULT -->
+
+            <div id="result"></div>
+
+        </section>
 
 
         <!-- ================= SUMMARY ================= -->
@@ -1070,8 +1165,6 @@
 
         <section class="stats">
 
-
-            <!-- CALORIES -->
 
             <div class="stat-card">
 
@@ -1089,7 +1182,6 @@
 
                 </div>
 
-
                 <div class="stat-value">
                     1,240
                     <span>
@@ -1097,16 +1189,12 @@
                     </span>
                 </div>
 
-
                 <div class="progress">
                     <div style="width:62%"></div>
                 </div>
 
             </div>
 
-
-
-            <!-- PROTEIN -->
 
             <div class="stat-card">
 
@@ -1124,7 +1212,6 @@
 
                 </div>
 
-
                 <div class="stat-value">
                     58
                     <span>
@@ -1132,16 +1219,12 @@
                     </span>
                 </div>
 
-
                 <div class="progress">
                     <div style="width:64%"></div>
                 </div>
 
             </div>
 
-
-
-            <!-- WATER -->
 
             <div class="stat-card">
 
@@ -1159,7 +1242,6 @@
 
                 </div>
 
-
                 <div class="stat-value">
                     1.6
                     <span>
@@ -1167,16 +1249,12 @@
                     </span>
                 </div>
 
-
                 <div class="progress">
                     <div style="width:64%"></div>
                 </div>
 
             </div>
 
-
-
-            <!-- EXERCISE -->
 
             <div class="stat-card">
 
@@ -1194,7 +1272,6 @@
 
                 </div>
 
-
                 <div class="stat-value">
                     32
                     <span>
@@ -1202,24 +1279,19 @@
                     </span>
                 </div>
 
-
                 <div class="progress">
                     <div style="width:53%"></div>
                 </div>
 
             </div>
 
-
         </section>
-
 
 
         <!-- ================= CHART + MEALS ================= -->
 
         <section class="content-grid">
 
-
-            <!-- WEEKLY CHART -->
 
             <div class="panel">
 
@@ -1278,9 +1350,6 @@
             </div>
 
 
-
-            <!-- ================= PERSONALIZED TODAY'S MEALS ================= -->
-
             <div class="panel">
 
                 <div class="panel-header">
@@ -1297,8 +1366,6 @@
 
                 </div>
 
-
-                <!-- BREAKFAST -->
 
                 <div class="meal">
 
@@ -1325,8 +1392,6 @@
                 </div>
 
 
-                <!-- LUNCH -->
-
                 <div class="meal">
 
                     <div class="meal-image">
@@ -1351,8 +1416,6 @@
 
                 </div>
 
-
-                <!-- DINNER -->
 
                 <div class="meal">
 
@@ -1379,8 +1442,6 @@
                 </div>
 
 
-                <!-- PERSONALIZATION STATUS -->
-
                 <div class="meal-status">
 
                     <strong>
@@ -1399,7 +1460,6 @@
             </div>
 
         </section>
-
 
 
         <!-- ================= QUICK ACCESS ================= -->
@@ -1429,7 +1489,6 @@
             </a>
 
 
-
             <a href="#" class="module">
 
                 <div class="module-icon">
@@ -1447,7 +1506,6 @@
             </a>
 
 
-
             <a href="#" class="module">
 
                 <div class="module-icon">
@@ -1463,7 +1521,6 @@
                 </p>
 
             </a>
-
 
 
             <a href="#" class="module">
@@ -1486,7 +1543,6 @@
         </section>
 
 
-
         <!-- ================= HEALTH TIP ================= -->
 
         <section class="health-tip">
@@ -1495,13 +1551,11 @@
                 🌿
             </div>
 
-
             <div>
 
                 <strong>
                     Healthy Tip
                 </strong>
-
 
                 <p>
                     A balanced diet can include colorful salads,
@@ -1516,6 +1570,23 @@
     </main>
 
 </div>
-  <script src="healthy.js"> </script>
+
+
+
+<!-- ================= ENTER KEY SEARCH ================= -->
+
+<script>
+
+document.getElementById("food").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchFood();
+    }
+
+});
+
+</script>
+<script src="dash.js"></script>
 </body>
 </html>
